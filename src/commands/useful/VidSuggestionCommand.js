@@ -7,6 +7,9 @@ module.exports = class VidSuggestCommand extends BaseCommand {
   }
 
   async run(client, message, args) {
+
+    const upvote = client.emojis.cache.get("733047442991349860");
+    const downvote = client.emojis.cache.get("733047442643222629");
     
     let suggestion = args.slice(0).join(" ");
 
@@ -39,8 +42,8 @@ module.exports = class VidSuggestCommand extends BaseCommand {
     .setFooter('NixxyyBot')
 
     const msg = await channel.send(embed);
-    await msg.react('✅');
-    await msg.react('❌');
+    await msg.react(upvote);
+    await msg.react(downvote);
     // message.channel.send(embed);
     if (message.content.startsWith(`${process.env.DISCORD_BOT_PREFIX}vid-suggest`))
     message.delete();
