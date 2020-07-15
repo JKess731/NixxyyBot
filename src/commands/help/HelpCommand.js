@@ -20,7 +20,7 @@ module.exports = class HelpCommand extends BaseCommand {
     .addField('`Help`', '&help', true)
     .addField('`Useful`', '&useful', true)
     //.addField('`General`', '&general', true)
-    //.addField('`Fun`', '&fun', true)
+    .addField('`Fun`', '&fun', true)
     .addField('`Economy`', '&economy', true)
     message.channel.send(embed);
   }
