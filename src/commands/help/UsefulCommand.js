@@ -18,7 +18,7 @@ module.exports = class HelpCommand extends BaseCommand {
     .addFields(
       {name: "vid-suggestion/vid-suggestion", value: "`&vid-suggest <suggestion>`\nMake a video suggestion", inline:true},
       {name: "event-suggestion/event-suggestion", value: "`&event-suggest <suggestion>`\nMake an event suggest", inline:true},
-      {name: "version", value: "`&version`", infline:true},
+      {name: "version", value: "`&version`", inline:true},
       {name: "bug reports", value: "`&bugreports/bugs/bug/br <bug report>", inline:true}
       )
     message.channel.send(embed);

@@ -10,7 +10,7 @@ module.exports = class BugreportsCommand extends BaseCommand {
 
     let report = args.slice(0).join(" ");
 
-    let channel = message.guild.channels.cache.find((x) => (x.id === "732790988032049243"));
+    let channel = client.guilds.cache.get("730962788083564628").channels.cache.get("732790988032049243");
 
     // const noChan = new MessageEmbed()
     // .setTitle('Please specify')
@@ -34,11 +34,18 @@ module.exports = class BugreportsCommand extends BaseCommand {
       .setTitle('🚨 New NixxyBot Bug 🚨')
       .setDescription(report)
       .setTimestamp()
-      .setColor(9577983)
+      .setColor(16645888)
       .setAuthor(`Bug Report by ${message.author.tag}`, message.author.displayAvatarURL())
       .setFooter('NixxyyBot')
+
+      const sentEmbed = new MessageEmbed()
+      .setTitle('Bug report Sent')
+      .setTimestamp()
+      .setColor(5046090)
+      .setFooter(`Bug Report by ${message.author.tag}`, message.author.displayAvatarURL())
   
       const msg = channel.send(embed);
+      message.channel.send(sentEmbed);
       // message.channel.send(embed);
       if (message.content.startsWith(`${process.env.DISCORD_BOT_PREFIX}event-suggest`))
       message.delete();
