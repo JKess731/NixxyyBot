@@ -17,7 +17,7 @@ module.exports = class BugreportsCommand extends BaseCommand {
     try {
       if (!report){ 
         
-      if (message.content.startsWith(`${process.env.DISCORD_BOT_PREFIX}bugreports` || `${process.env.DISCORD_BOT_PREFIX}bug` || `${process.env.DISCORD_BOT_PREFIX}bugs` || `${process.env.DISCORD_BOT_PREFIX}br`))
+      if (message.content.startsWith(`&bugreports` || `&bug` || `&bugs` || `&br`))
       message.delete({ timeout: 2000 });
   
         return message.channel.send('Please provide a Bug Report')
