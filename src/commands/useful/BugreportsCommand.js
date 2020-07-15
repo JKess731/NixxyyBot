@@ -14,10 +14,6 @@ module.exports = class BugreportsCommand extends BaseCommand {
 
     // const noChan = new MessageEmbed()
     // .setTitle('Please specify')
-
-    if (!channel){
-      return message.channel.send('You may only make event suggestions in the #event-suggestions channel')
-    }
     try {
       if (!report){ 
         

@@ -3,7 +3,7 @@ const { MessageEmbed } =require('discord.js');
 
 module.exports = class VidSuggestCommand extends BaseCommand {
   constructor() {
-    super('vid-suggest', 'useful', []);
+    super('vid-suggest', 'useful', ["vid-suggestion"]);
   }
 
   async run(client, message, args) {

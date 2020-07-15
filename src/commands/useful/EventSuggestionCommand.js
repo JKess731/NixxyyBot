@@ -3,7 +3,7 @@ const { MessageEmbed } =require('discord.js');
 
 module.exports = class EventSuggestCommand extends BaseCommand {
   constructor() {
-    super('event-suggest', 'useful', []);
+    super('event-suggest', 'useful', ["event-suggestion"]);
   }
 
   async run(client, message, args) {

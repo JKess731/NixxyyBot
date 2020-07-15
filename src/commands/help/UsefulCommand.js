@@ -16,9 +16,10 @@ module.exports = class HelpCommand extends BaseCommand {
     .setTimestamp()
     .setFooter(`Requested by ${message.author.username}`)
     .addFields(
-      {name: "vid-suggestion", value: "`&vid-suggest <suggestion>`\nMake a video suggestion", inline:true},
-      {name: "event-suggestion", value: "`&event-suggest <suggestion>`\nMake an event suggest", inline:true},
-      {name: "version", value: "`&version`", infline:true}
+      {name: "vid-suggestion/vid-suggestion", value: "`&vid-suggest <suggestion>`\nMake a video suggestion", inline:true},
+      {name: "event-suggestion/event-suggestion", value: "`&event-suggest <suggestion>`\nMake an event suggest", inline:true},
+      {name: "version", value: "`&version`", infline:true},
+      {name: "bug reports", value: "`&bugreports/bugs/bug/br <bug report>", inline:true}
       )
     message.channel.send(embed);
   }
