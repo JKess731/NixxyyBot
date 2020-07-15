@@ -1,6 +1,6 @@
 const BaseCommand = require('../../utils/structures/BaseCommand');
 const { Discord, MessageEmbed } = require('discord.js');
-const ms = require('ms');
+const ms = require('parse-ms');
 const mongoose = require('mongoose');
 
 // Connection to DB
@@ -48,11 +48,13 @@ module.exports = class DailyCommand extends BaseCommand {
           
          // let time = ms(timeout - (Date.now() - data.daily));
 
+         let time = ms(timeout - (Date.now() - data.daily));
+
           const alreadyEmbed = new MessageEmbed()
           .setColor(16730698)
           .setDescription(`😡 **You already collected your daily reward**`)
           .setTimestamp()
-          .setFooter('Come back tommorow')
+          .setFooter(`Come back in ${time.hours}h, ${time.minutes}m, ${time.seconds}s`)
           return message.channel.send(alreadyEmbed);
         } else {
           data.money += reward;
@@ -63,7 +65,7 @@ module.exports = class DailyCommand extends BaseCommand {
           .setDescription(`😁 **You collected your daily reward**`)
           .setTimestamp()
           .addField(`New Balance:`, `**$${data.money}**`)
-          .setFooter('Come back tommorow to Collect again')
+          .setFooter(`Come back in ${time.hours}h, ${time.minutes}m, ${time.seconds}s`)
           return message.channel.send(collectedEmbed);
         }
       }

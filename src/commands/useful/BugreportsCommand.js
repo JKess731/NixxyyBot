@@ -17,7 +17,7 @@ module.exports = class BugreportsCommand extends BaseCommand {
     try {
       if (!report){ 
         
-      if (message.content.startsWith(`&bugreports` || `&bug` || `&bugs` || `&br`))
+      if (message.content.startsWith(`${process.env.DISCORD_BOT_PREFIX}bugreports` || `${process.env.DISCORD_BOT_PREFIX}bug` || `${process.env.DISCORD_BOT_PREFIX}bugs` || `${process.env.DISCORD_BOT_PREFIX}br`))
       message.delete({ timeout: 2000 });
   
         return message.channel.send('Please provide a Bug Report')
@@ -30,6 +30,7 @@ module.exports = class BugreportsCommand extends BaseCommand {
     }
 
     if (report) {
+
       const embed = new MessageEmbed()
       .setTitle('🚨 New NixxyBot Bug 🚨')
       .setDescription(report)
@@ -44,12 +45,7 @@ module.exports = class BugreportsCommand extends BaseCommand {
       .setColor(5046090)
       .setFooter(`Bug Report by ${message.author.tag}`, message.author.displayAvatarURL())
   
-      const msg = channel.send(embed);
-      message.channel.send(sentEmbed);
-      // message.channel.send(embed);
-      if (message.content.startsWith(`${process.env.DISCORD_BOT_PREFIX}event-suggest`))
-      message.delete();
-      
+      const msg = await channel.send(embed).then(message.channel.send(sentEmbed));
       }
   }
 }
