@@ -60,6 +60,7 @@ module.exports = class DailyCommand extends BaseCommand {
           data.money += reward;
           data.weekly = Date.now();
           data.save().catch(err => console.log(err));
+          let time = ms(timeout - (Date.now() - data.weekly));
           const collectedEmbed = new MessageEmbed()
           .setColor(5046090)
           .setDescription(`😁 **You collected your weekly reward**`)
