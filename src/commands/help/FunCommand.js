@@ -1,9 +1,11 @@
 const BaseCommand = require('../../utils/structures/BaseCommand');
 const { MessageEmbed } = require('discord.js');
 
+const packageJson = require('../../../package.json');
+
 module.exports = class FunCommand extends BaseCommand {
   constructor() {
-    super('fun', 'fun', []);
+    super('fun', 'help', []);
   }
 
   run(client, message, args) {
