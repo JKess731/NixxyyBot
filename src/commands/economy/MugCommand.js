@@ -78,7 +78,7 @@ module.exports = class MugCommand extends BaseCommand {
               return message.channel.send(noRob);
             }
 
-            var pick = Math = Math.random() * 100;
+            var pick = Math.random() * 100;
             // let chances = ["caught", "mugged"];
             // var pick = chances[Math.floor(Math.random() * chances.length)];
 
@@ -126,7 +126,6 @@ module.exports = class MugCommand extends BaseCommand {
       })
     }
     
-
     cooldown.add(message.author.id);
     setTimeout(() => {
       cooldown.delete(message.author.id)
