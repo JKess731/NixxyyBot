@@ -12,8 +12,11 @@ module.exports = class YeahyeahCommand extends BaseCommand {
     const yeahyeah2 = 'https://vm.tiktok.com/JNNBNRq/';
     const yeahyeah3 = 'https://vm.tiktok.com/JNNapE7/';
     const yeahyeah4 = 'https://vm.tiktok.com/JNNapE7/';
+    const yeahyeah5 = 'https://vm.tiktok.com/JN6LwAp/';
+    const yeahyeah6 = 'https://vm.tiktok.com/JNjK8G1/';
+    const yeahyeah7 = 'https://vm.tiktok.com/JNjpVQj/';
 
-    let yeahyeahs = [yeahyeah1, yeahyeah2, yeahyeah3, yeahyeah4];
+    let yeahyeahs = [yeahyeah1, yeahyeah2, yeahyeah3, yeahyeah4, yeahyeah5, yeahyeah6, yeahyeah7];
     var yeahyeahpick = yeahyeahs[Math.floor(Math.random() * yeahyeahs.length)];
 
     let titles = ["singing", "challenge", "yeahyeah"];

@@ -77,6 +77,8 @@ module.exports = class PayCommand extends BaseCommand {
 
           if (!args[1]) return message.channel.send(noSent);
 
+          if (!args[1] != Math.floor(args[1])) return message.channel.sent(onlyInt);
+
           if(parseInt(args[1]) > authorData.money) return message.channel.send(notEnough);
           if(parseInt(args[1]) < 1) return message.channel.send(notOne);
 
