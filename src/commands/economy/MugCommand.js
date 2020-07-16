@@ -78,8 +78,9 @@ module.exports = class MugCommand extends BaseCommand {
               return message.channel.send(noRob);
             }
 
-            let chances = ["caught", "mugged"];
-            var pick = chances[Math.floor(Math.random() * chances.length)];
+            var pick = Math = Math.random() * 100;
+            // let chances = ["caught", "mugged"];
+            // var pick = chances[Math.floor(Math.random() * chances.length)];
 
             function getRandomIntBetween(min, max) {
               min = Math.ceil(min);
@@ -95,7 +96,7 @@ module.exports = class MugCommand extends BaseCommand {
               .setTimestamp()
 
 
-            if (pick == "mugged") {
+            if (pick > 25) {
 
               userData.money -= amount;
               authorData.money += amount;
@@ -104,13 +105,8 @@ module.exports = class MugCommand extends BaseCommand {
 
               message.channel.send(youmugged)
 
-              cooldown.add(message.author.id);
-              setTimeout(() => {
-                cooldown.delete(message.author.id)
-              }, 1000 * 30)                
-
             }
-            else if (pick == "caught") {
+            else if (pick <= 25) {
 
               let bail = getRandomIntBetween(1, 500)
 
@@ -124,17 +120,18 @@ module.exports = class MugCommand extends BaseCommand {
                 .setColor(16730698)
 
               message.channel.send(jail);
-
-              cooldown.add(message.author.id);
-              setTimeout(() => {
-                cooldown.delete(message.author.id)
-              }, 1000 * 30 * 30)   
-
             }
           })
         }
       })
     }
+    
+
+    cooldown.add(message.author.id);
+    setTimeout(() => {
+      cooldown.delete(message.author.id)
+    }, 1000 * 30 * 30)   
+
   }
 }
 
