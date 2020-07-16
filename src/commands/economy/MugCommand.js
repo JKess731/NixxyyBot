@@ -128,7 +128,7 @@ module.exports = class MugCommand extends BaseCommand {
               cooldown.add(message.author.id);
               setTimeout(() => {
                 cooldown.delete(message.author.id)
-              }, 1000 * 30)   
+              }, 1000 * 30 * 30)   
 
             }
           })
